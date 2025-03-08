@@ -3,7 +3,7 @@ from F_taste_admin.utils.jwt_token_factory import JWTTokenFactory
 
 #import di kafka
 from F_taste_admin.kafka.kafka_producer import send_kafka_message
-from F_taste_admin.kafka.kafka_consumer import wait_for_kafka_response
+from F_taste_admin.utils.kafka_helpers import wait_for_kafka_response
 ######
 
 jwt_factory = JWTTokenFactory()
