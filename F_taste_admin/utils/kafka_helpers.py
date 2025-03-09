@@ -33,4 +33,5 @@ consumer_response = KafkaConsumer(
 def wait_for_kafka_response(topics):
     for message in consumer_response:
         if message.topic in topics:
+            consumer_response.close()
             return message.value

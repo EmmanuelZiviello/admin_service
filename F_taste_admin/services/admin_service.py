@@ -13,7 +13,7 @@ jwt_factory = JWTTokenFactory()
 
 class AdminService:
     
-    #da provare
+    
     @staticmethod
     def login_admin(s_admin):
         if "id_admin" not in s_admin or "password" not in s_admin:
