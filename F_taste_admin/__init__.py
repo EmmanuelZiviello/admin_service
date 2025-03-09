@@ -14,6 +14,7 @@ from F_taste_admin.ma import ma
 
 from F_taste_admin.namespaces import admin_ns
 from F_taste_admin.controllers.paziente_controller import AdminPaziente,Pazienti
+from F_taste_admin.controllers.nutrizionista_controller import AdminNutrizionista,Nutrizionisti
 
 
 
@@ -126,6 +127,8 @@ def create_app():
     #admin resources 
     admin_ns.add_resource(AdminPaziente, '/paziente')
     admin_ns.add_resource(Pazienti,'/pazienti')
+    admin_ns.add_resource(AdminNutrizionista,'/nutrizionista')
+    admin_ns.add_resource(Nutrizionisti,'/nutrizionisti')
   
     
     
