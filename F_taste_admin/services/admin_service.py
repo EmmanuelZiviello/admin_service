@@ -25,11 +25,11 @@ class AdminService:
             return {
                 "esito": "successo",
                 "access_token": jwt_factory.create_access_token(id_admin, 'admin'),
-                "refresh_token": jwt_factory.create_access_token(id_admin, 'admin')
+                "refresh_token": jwt_factory.create_refresh_token(id_admin, 'admin')
             }, 200
         return {"esito": "credenziali errate"}, 401
     
-    #da fare
+    
     @staticmethod
     def delete_paziente(s_admin):
         id_paziente=s_admin['id_paziente']
@@ -40,7 +40,7 @@ class AdminService:
         response=wait_for_kafka_response(["patient.delete.success", "patient.delete.failed"])
         return response
     
-    #da fare
+    
     @staticmethod
     def delete_nutrizionista(s_admin):
         email=s_admin['email']
@@ -51,7 +51,7 @@ class AdminService:
         response=wait_for_kafka_response(["dietitian.delete.success", "dietitian.delete.failed"])
         return response
     
-    #da fare
+    
     @staticmethod
     def get_pazienti():
         message = {}  # Non ci sono parametri, quindi il messaggio può essere vuoto 
@@ -59,7 +59,7 @@ class AdminService:
         response = wait_for_kafka_response(["patient.getAll.success", "patient.getAll.failed"])
         return response
     
-    #da fare
+    
     @staticmethod
     def get_nutrizionisti():
         message = {}  # Non ci sono parametri, quindi il messaggio può essere vuoto 
